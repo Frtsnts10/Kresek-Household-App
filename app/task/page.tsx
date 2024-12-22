@@ -2,9 +2,9 @@
 
 import React from "react";
 import { Badge, Card } from "@nextui-org/react";
-import { BellRing } from "lucide-react";
+import { CirclePlus } from "lucide-react";
 
-export default function Home() {
+export default function Task() {
   const [isInvisible, setIsInvisible] = React.useState(false);
 
   return (
@@ -13,28 +13,18 @@ export default function Home() {
       <section
         className="sticky top-0 z-10 bg-[var(--background)] p-4 flex flex-row justify-between items-center border-b pb-4"
         style={{ borderBottom: "1px solid var(--border-gray)" }}>
-        <h1 className="text-[24px] font-bold">
-          Welcome, <span className="text-[20px] font-normal">John Doe</span>
-        </h1>
+        <h1 className="text-[24px] font-bold">Current Tasks</h1>
 
-        <div className="cursor-pointer flex items-center">
-          <Badge
-            color="danger"
-            content={5}
-            shape="circle"
-            isInvisible={isInvisible}>
-            <BellRing size={24} />
-          </Badge>
-        </div>
+        <CirclePlus size={24} className="cursor-pointer" />
       </section>
 
       <section className="m-6 flex flex-col gap-6">
         {/* Stats Section */}
-        <Card className="rounded-xl p-6 bg-[var(--card-bg)]">
+        <Card className="rounded-xl p-6">
           <div className="flex justify-evenly items-center">
             {/* Total Household */}
             <div className="flex flex-col items-center w-[200px]">
-              <h2 className="text-[22px] font-bold">Total Household</h2>
+              <h2 className="text-[24px] font-bold">Total Household</h2>
               <span className="text-[18px]">4</span>
             </div>
 
@@ -45,14 +35,14 @@ export default function Home() {
 
             {/* Active Now */}
             <div className="flex flex-col items-center w-[200px]">
-              <h2 className="text-[22px] font-bold">Active Now</h2>
+              <h2 className="text-[24px] font-bold">Active Now</h2>
               <span className="text-[18px]">2</span>
             </div>
           </div>
         </Card>
 
         {/* Dues Section */}
-        <Card className="rounded-xl p-6 space-y-4 bg-[var(--card-bg)]">
+        <Card className="rounded-xl p-6 space-y-4">
           <h2 className="font-bold text-[24px]">Current Month</h2>
 
           {/* Main Content */}
@@ -92,19 +82,16 @@ export default function Home() {
           <h2 className="font-bold text-[24px]">Quick Actions</h2>
 
           <div className="flex flex-row p-2 gap-6 overflow-x-auto scrollbar-hide">
-            <Card className="p-4 flex flex-col items-center min-w-[150px] bg-[var(--card-bg)]">
+            <Card className="p-4 flex flex-col items-center min-w-[150px]">
               <span className="font-bold text-blue-500">+ Add Member</span>
             </Card>
-
-            <Card className="p-4 flex flex-col items-center min-w-[150px] bg-[var(--card-bg)]">
+            <Card className="p-4 flex flex-col items-center min-w-[150px]">
               <span className="font-bold text-blue-500">+ Add Task</span>
             </Card>
-
-            <Card className="p-4 flex flex-col items-center min-w-[150px] bg-[var(--card-bg)]">
+            <Card className="p-4 flex flex-col items-center min-w-[150px]">
               <span className="font-bold text-blue-500">+ Add Expense</span>
             </Card>
-
-            <Card className="p-4 flex flex-col items-center min-w-[150px] bg-[var(--card-bg)]">
+            <Card className="p-4 flex flex-col items-center min-w-[150px]">
               <span className="font-bold text-blue-500">+ Add Event</span>
             </Card>
           </div>
@@ -114,7 +101,7 @@ export default function Home() {
         <section className="flex flex-col gap-4">
           <h2 className="text-[24px] font-bold">Recent Activities</h2>
 
-          <Card className="rounded-xl p-6 bg-[var(--card-bg)]">
+          <Card className="rounded-xl p-6">
             <ul className="list-disc pl-4">
               <li>Paid $500 for house dues</li>
               <li>Added a new task: "Clean the kitchen"</li>
@@ -127,7 +114,7 @@ export default function Home() {
         <section className="flex flex-col gap-4">
           <h2 className="text-[24px] font-bold">Recent Activities</h2>
 
-          <Card className="rounded-xl p-6 bg-[var(--card-bg)]">
+          <Card className="rounded-xl p-6">
             <ul className="list-disc pl-4">
               <li>Paid $500 for house dues</li>
               <li>Added a new task: "Clean the kitchen"</li>

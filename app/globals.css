@@ -5,12 +5,26 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --topbar-bg: #f3f4f6; /* Light mode TopBar */
+  --bottombar-bg: #f3f4f6; /* Light mode BottomBar */
+  --card-bg: #ffffff;
+  --card-shadow: rgba(0, 0, 0, 0.1);
+  --border-gray: #9ca3af; /* Neutral gray (gray-500 in Tailwind) */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --topbar-bg: #1a1a1a; /* Dark mode TopBar */
+    --bottombar-bg: #1a1a1a; /* Dark mode BottomBar */
+    --card-bg: #1e1e1e;
+    --card-shadow: rgba(255, 255, 255, 0.1);
+    --border-gray: #6b7280; /* Slightly darker neutral gray (gray-600 in Tailwind) */
+  }
+
+  footer {
+    background: rgba(26, 26, 26, 0.7); /* Dark mode transparency */
   }
 }
 
@@ -18,4 +32,43 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  background: var(--topbar-bg);
+  color: var(--foreground);
+  box-shadow: 0 2px 4px var(--card-shadow);
+}
+
+footer {
+  background: rgba(255, 255, 255, 0.7); /* Light mode transparency */
+  color: var(--foreground);
+  border-top: 1px solid var(--border-gray); /* Neutral gray border */
+  backdrop-filter: blur(10px); /* Apply the glass blur effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+}
+
+.card {
+  background: var(--card-bg);
+  color: var(--foreground);
+  box-shadow: 0 4px 6px var(--card-shadow);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+a {
+  color: var(--foreground);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
 }
