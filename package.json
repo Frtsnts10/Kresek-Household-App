@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@capacitor/cli": "^6.2.0",
+    "@capacitor/cli": "^8.0.2",
     "@capacitor/core": "^6.2.0",
     "@nextui-org/badge": "^2.2.3",
     "@nextui-org/card": "^2.2.7",
